@@ -2,7 +2,8 @@
 'use strict';
 
 const merge = require('merge')
-const detectInstalled = require('detect-intsalled')
+const globby = require('globby')
+const detectInstalled = require('detect-installed')
 const typefaceList = require('./lib/typefaces')
 
 module.exports = {
@@ -10,8 +11,7 @@ module.exports = {
 
   included (app) {
     this.options = merge.recursive({}, {
-      typefaces: [
-      ]
+      typefaces: []
     }, this._getAddonOptions(app).typefaceOptions)
 
     if (!this.options.typefaces.length) {
@@ -19,6 +19,7 @@ module.exports = {
     }
 
     this._checkTypefaces()
+    this._createImports()
   },
 
   _getAddonOptions (app) {
@@ -34,6 +35,24 @@ module.exports = {
       if (!detectInstalled.sync(`typeface-${typeface}`, { local: true })) {
         throw new Error(`The font package 'typeface-${typeface}' is not installed. Please add it to your project with NPM or Yarn.`)
       }
+    })
+  },
+
+  _getTypefaceFiles (typeface) {
+    return globby.sync(`node_modules/typeface-${typeface}/files`)
+  },
+
+  _createImports () {
+    this.options.typefaces.forEach((typeface) => {
+      this.import(`node_modules/typeface-${typeface}/index.css`, {
+        destDir: 'assets/files'
+      });
+
+      this._getTypefaceFiles(typeface).forEach((fileName) => {
+        this.import(fileName, {
+          destDir: 'assets/files'
+        });
+      })
     })
   }
 };
