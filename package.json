@@ -1,12 +1,20 @@
 {
   "name": "ember-typeface",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffjewiss/ember-typeface"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffjewiss/ember-typeface/issues"
+  },
+  "homepage": "https://github.com/jeffjewiss/ember-typeface",
+  "author": "Jeff Jewiss <jeffjewiss@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
