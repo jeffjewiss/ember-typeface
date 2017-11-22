@@ -1,26 +1,21 @@
 # ember-typeface
 
-This README outlines the details of collaborating on this Ember addon.
+Easily add typefaces to your Ember project in 3 easy steps.
 
-## Installation
+1. Pick a typeface from the list of over [800 avialable](https://github.com/jeffjewiss/ember-typeface/blob/master/lib/typefaces.js)
+2. Install the corresponding typeface package, ie. `npm install typeface-lato --save-dev`
+3. Configure the typeface with your application:
 
-* `git clone <repository-url>` this repository
-* `cd ember-typeface`
-* `npm install`
+```javascript
+  let app = new EmberApp(defaults, {
+    typefaceOptions: {
+      typefaces: [
+        'lato'
+      ]
+    }
+  });
+```
 
-## Running
+You are now free to use `font-family: “Lato”` in your application’s styles.
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-## Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+*This add-on is still under development and relies on a feature only available in `ember-cli` v2.16 and above.*
