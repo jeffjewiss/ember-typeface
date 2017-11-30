@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "detect-installed": "2.0.4",
-    "ember-cli-babel": "6.3.0",
+    "ember-cli-babel": "6.7.1",
     "globby": "7.1.1",
     "merge": "1.2.0"
   },
