@@ -1,6 +1,8 @@
 ember-typeface
 ==============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jeffjewiss/ember-typeface.svg)](https://greenkeeper.io/)
+
 [![build status](https://travis-ci.org/jeffjewiss/ember-typeface.svg?branch=master)](https://travis-ci.org/jeffjewiss/ember-typeface)
 [![npm version](https://badge.fury.io/js/ember-typeface.svg)](http://badge.fury.io/js/ember-typeface)
 [![ember observer score](http://emberobserver.com/badges/ember-typeface.svg)](http://emberobserver.com/addons/ember-typeface)
