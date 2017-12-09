@@ -3,10 +3,15 @@
   "version": "0.0.1",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "font",
+    "typeface"
   ],
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffjewiss/ember-typeface"
+  },
   "bugs": {
     "url": "https://github.com/jeffjewiss/ember-typeface/issues"
   },
@@ -19,7 +24,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:each"
+    "lint": "eslint app addon blueprints config server test-support tests *.js",
+    "test": "npm run lint && ember try:each"
   },
   "dependencies": {
     "detect-installed": "2.0.4",
@@ -49,8 +55,12 @@
     "loader.js": "^4.2.3"
   },
   "engines": {
-    "node": "^4.5 || 6.* || >= 7.*"
+    "node": ">= 6.*"
   },
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "ember-addon": {
     "configPath": "tests/dummy/config"
   }
