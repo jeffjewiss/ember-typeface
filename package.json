@@ -8,10 +8,7 @@
     "typeface"
   ],
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jeffjewiss/ember-typeface"
-  },
+  "repository": "",
   "bugs": {
     "url": "https://github.com/jeffjewiss/ember-typeface/issues"
   },
@@ -31,8 +28,11 @@
     "detect-installed": "2.0.4",
     "ember-cli-babel": "6.10.0",
     "ember-cli-version-checker": "2.1.0",
+    "fuzzysearch": "1.0.3",
     "globby": "7.1.1",
-    "merge": "1.2.0"
+    "humanize-string": "1.0.1",
+    "merge": "1.2.0",
+    "titleize": "1.0.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",

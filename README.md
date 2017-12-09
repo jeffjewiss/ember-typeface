@@ -35,4 +35,10 @@ Usage
 
 You are now free to use `font-family: “Lato”` in your application’s styles.
 
+Commands
+--------
+
+`ember typeface:list` – view a list of all the available typefaces
+`ember typeface:search <name>` – perform a fuzzy search on the list of typefaces
+
 *This add-on is still under development and relies on a feature only available in `ember-cli` v2.16 and above.*
