@@ -36,8 +36,8 @@ You are now free to use `font-family: “Lato”` in your application’s styles
 Commands
 --------
 
-`ember typeface:list` – view a list of all the available typefaces
-`ember typeface:search <name>` – perform a fuzzy search on the list of typefaces
+* `ember typeface:list` – view a list of all the available typefaces
+* `ember typeface:search <name>` – perform a fuzzy search on the list of typefaces
 
 Example
 -------
