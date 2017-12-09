@@ -1,8 +1,6 @@
 ember-typeface
 ==============
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/jeffjewiss/ember-typeface.svg)](https://greenkeeper.io/)
-
 [![build status](https://travis-ci.org/jeffjewiss/ember-typeface.svg?branch=master)](https://travis-ci.org/jeffjewiss/ember-typeface)
 [![npm version](https://badge.fury.io/js/ember-typeface.svg)](http://badge.fury.io/js/ember-typeface)
 [![ember observer score](http://emberobserver.com/badges/ember-typeface.svg)](http://emberobserver.com/addons/ember-typeface)
@@ -41,4 +39,7 @@ Commands
 `ember typeface:list` – view a list of all the available typefaces
 `ember typeface:search <name>` – perform a fuzzy search on the list of typefaces
 
-*This add-on is still under development and relies on a feature only available in `ember-cli` v2.16 and above.*
+Example
+-------
+
+To see an example of an Ember app configured with a typeface check out: https://github.com/jeffjewiss/ember-typeface-example
