@@ -3,6 +3,9 @@
 
 const merge = require('merge')
 const globby = require('globby')
+const fuzzysearch = require('fuzzysearch')
+const titleize = require('titleize')
+const humanizeString = require('humanize-string')
 const detectInstalled = require('detect-installed')
 const typefaceList = require('./lib/typefaces')
 const VersionChecker = require('ember-cli-version-checker')
@@ -30,6 +33,38 @@ module.exports = {
 
     this._checkTypefaces()
     this._createImports()
+  },
+
+  includedCommands: function() {
+    return {
+      'typeface:list': {
+        name: 'typeface:list',
+        description: 'Display a list of all the available typefaces.',
+        works: 'insideProject',
+        run () {
+          for (let typeface of typefaceList) {
+            this.ui.writeLine(`${titleize(humanizeString(typeface))} (${typeface})`)
+          }
+        }
+      },
+      'typeface:search': {
+        name: 'typeface:search',
+        description: 'Fuzzy search the list of available typefaces.',
+        works: 'insideProject',
+        anonymousOptions: [
+          '<name>'
+        ],
+        run (commandOptions, rawArgs) {
+          let name = rawArgs[0]
+          let filteredTypefaceList = typefaceList
+            .filter((typeface) => fuzzysearch(name.toLowerCase(), typeface.toLowerCase()))
+
+          for (let typeface of filteredTypefaceList) {
+            this.ui.writeLine(`${titleize(humanizeString(typeface))} (${typeface})`)
+          }
+        }
+      }
+    }
   },
 
   _getAddonOptions (app) {
