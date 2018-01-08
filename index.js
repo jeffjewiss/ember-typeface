@@ -14,7 +14,9 @@ module.exports = {
   name: 'ember-typeface',
 
   init () {
-    let checker = new VersionChecker(this);
+    this._super.init && this._super.init.apply(this, arguments);
+
+    let checker = new VersionChecker(this)
     let assertMessage = 'To use ember-typeface you must have ember-cli 2.16 or above.'
 
     checker
