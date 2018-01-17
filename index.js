@@ -7,8 +7,9 @@ const fuzzysearch = require('fuzzysearch')
 const titleize = require('titleize')
 const humanizeString = require('humanize-string')
 const detectInstalled = require('detect-installed')
-const typefaceList = require('./lib/typefaces')
 const VersionChecker = require('ember-cli-version-checker')
+const typefaceList = require('./lib/typefaces')
+const emberENV = process.env.EMBER_ENV
 
 module.exports = {
   name: 'ember-typeface',
@@ -24,13 +25,13 @@ module.exports = {
       .assertAbove('2.16.0', assertMessage);
   },
 
-  included (app) {
-    let addonOptions = this._getAddonOptions(app).typefaceOptions || {}
-    let typefaces = addonOptions.disableAuto ? [] : this._getTypefacesFromPackage()
+  included (/* app */) {
+    let typefaceOptions = require(`${this.project.root}/config/environment`)(emberENV).typefaceOptions || {}
+    let typefaces = typefaceOptions.disableAuto ? [] : getTypefacesFromPackage()
 
     this._options = merge.all([{}, {
       typefaces
-    }, addonOptions])
+    }, typefaceOptions])
 
 
     if (!this._options.typefaces.length) {
@@ -41,8 +42,33 @@ module.exports = {
     this._createImports()
   },
 
-  includedCommands: function() {
+  includedCommands () {
+    let typefaceOptions = require(`${this.project.root}/config/environment`)(process.env.EMBER_ENV).typefaceOptions || {}
+
     return {
+      'typeface:active': {
+        name: 'typeface:active',
+        description: 'Display a list of the active typefaces.',
+        works: 'insideProject',
+        run () {
+          let typefaceListFromConfig = typefaceOptions.typefaces
+            .filter((typeface) => typefaceList.includes(typeface.toLowerCase()))
+          let typefaceListFromPackages = getTypefacesFromPackage()
+            .filter((typeface) => typefaceList.includes(typeface.toLowerCase()))
+
+          let fullTypefaceList = typefaceOptions.disableAuto ?
+            typefaceListFromConfig :
+            typefaceListFromConfig.concat(typefaceListFromPackages).filter(onlyUnique)
+
+          if (!(fullTypefaceList.length > 0)) {
+            this.ui.writeLine('There are no active typefaces.')
+          }
+
+          for (let typeface of fullTypefaceList) {
+            this.ui.writeLine(`${titleize(humanizeString(typeface))} (${typeface})`)
+          }
+        }
+      },
       'typeface:list': {
         name: 'typeface:list',
         description: 'Display a list of all the available typefaces.',
@@ -107,13 +133,14 @@ module.exports = {
     })
   },
 
-  _getTypefacesFromPackage () {
-    return globby
-      .sync('node_modules/typeface-*/', { nodir: false })
-      .map((fullPath) => fullPath.replace('node_modules/', '').replace('/', '').replace('typeface-', '')
-    )},
 };
 
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index
 }
+
+function getTypefacesFromPackage () {
+  return globby
+    .sync('node_modules/typeface-*/', { nodir: false })
+    .map((fullPath) => fullPath.replace('node_modules/', '').replace('/', '').replace('typeface-', '')
+  )}

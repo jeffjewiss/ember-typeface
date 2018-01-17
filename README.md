@@ -37,22 +37,28 @@ You are now free to use `font-family: "Lato"` in your application’s styles.
 Advanced Usage
 --------------
 
-Ember Typeface will try to look through your `node_modules` to discover typeface packages. If typefaces are specified in the `options.typefaces` property the two lists will be merged for unique values. However, you can choose to disable this auto discovery and configure which typefaces are imported into your project.
+Ember Typeface will try to look through your `node_modules` to discover typeface packages. If typefaces are specified in the config options in your app’s evironment: `ENV.typefaceOptions.typefaces` the two lists will be merged for unique values. However, you can choose to disable this auto discovery and configure which typefaces are imported into your project.
 
 ```javascript
-  let app = new EmberApp(defaults, {
+// config/environment.js
+module.exports = function(environment) {
+  let ENV = {
+    ...
+
     typefaceOptions: {
       disableAuto: true, // default is false, disable to manually choose typefaces
       typefaces: [
         'lato'
       ]
     }
-  });
+  };
+};
 ```
 
 Commands
 --------
 
+* `ember typeface:active` – view a list of the typefaces to be included in the app
 * `ember typeface:list` – view a list of all the available typefaces
 * `ember typeface:search <name>` – perform a fuzzy search on the list of typefaces
 
