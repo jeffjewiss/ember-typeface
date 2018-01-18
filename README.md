@@ -9,7 +9,7 @@
 
 <br>
 
-<div align=”center”>
+<div align="center">
   <p>Easily add typefaces to your Ember project in 3 easy steps.</p>
 </div>
 
