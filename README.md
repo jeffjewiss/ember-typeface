@@ -1,11 +1,21 @@
-ember-typeface
-==============
+<h1 align="center">Ember Typeface</h1>
 
-[![build status](https://travis-ci.org/jeffjewiss/ember-typeface.svg?branch=master)](https://travis-ci.org/jeffjewiss/ember-typeface)
-[![npm version](https://badge.fury.io/js/ember-typeface.svg)](http://badge.fury.io/js/ember-typeface)
-[![ember observer score](http://emberobserver.com/badges/ember-typeface.svg)](http://emberobserver.com/addons/ember-typeface)
+<div align="center">
+  <a href="https://travis-ci.org/jeffjewiss/ember-typeface"><img src="https://travis-ci.org/jeffjewiss/ember-typeface.svg?branch=master" alt="Build Status"></a>
+  <a href="https://www.npmjs.com/package/ember-typeface"><img src="https://img.shields.io/npm/v/ember-typeface.svg" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/ember-typeface"><img src="https://img.shields.io/npm/dm/ember-typeface.svg" alt="Monthly Downloads"></a>
+  <a href="http://emberobserver.com/addons/ember-typeface"><img src="http://emberobserver.com/badges/ember-typeface.svg" alt="Ember Observer Score"></a>
+</div>
 
-Easily add typefaces to your Ember project in 3 easy steps.
+<br>
+
+<div align=”center”>
+  <p>Easily add typefaces to your Ember project in 3 easy steps.</p>
+</div>
+
+<br>
+<br>
+<br>
 
 Installation
 ------------
