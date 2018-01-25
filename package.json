@@ -25,13 +25,13 @@
     "test": "npm run lint && ember try:each"
   },
   "dependencies": {
+    "deepmerge": "2.0.1",
     "detect-installed": "2.0.4",
     "ember-cli-babel": "6.11.0",
     "ember-cli-version-checker": "2.1.0",
     "fuzzysearch": "1.0.3",
     "globby": "7.1.1",
     "humanize-string": "1.0.1",
-    "merge": "1.2.0",
     "titleize": "1.0.0"
   },
   "devDependencies": {

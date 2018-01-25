@@ -1,7 +1,7 @@
 /* eslint-env node */
 'use strict';
 
-const merge = require('merge')
+const merge = require('deepmerge')
 const globby = require('globby')
 const fuzzysearch = require('fuzzysearch')
 const titleize = require('titleize')
@@ -25,9 +25,13 @@ module.exports = {
   },
 
   included (app) {
-    this.options = merge.recursive({}, {
-      typefaces: []
-    }, this._getAddonOptions(app).typefaceOptions)
+    let addonOptions = this._getAddonOptions(app).typefaceOptions || {}
+    let typefaces = addonOptions.disableAuto ? [] : this._getTypefacesFromPackage()
+
+    this.options = merge.all([{}, {
+      typefaces
+    }, addonOptions])
+
 
     if (!this.options.typefaces.length) {
       return;
@@ -90,7 +94,7 @@ module.exports = {
   },
 
   _createImports () {
-    this.options.typefaces.forEach((typeface) => {
+    this.options.typefaces.filter(onlyUnique).forEach((typeface) => {
       this.import(`node_modules/typeface-${typeface}/index.css`, {
         destDir: 'assets/files'
       });
@@ -101,5 +105,15 @@ module.exports = {
         });
       })
     })
-  }
+  },
+
+  _getTypefacesFromPackage () {
+    return globby
+      .sync('node_modules/typeface-*/', { nodir: false })
+      .map((fullPath) => fullPath.replace('node_modules/', '').replace('/', '').replace('typeface-', '')
+    )},
 };
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index
+}

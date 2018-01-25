@@ -10,7 +10,7 @@
 <br>
 
 <div align="center">
-  <p>Easily add typefaces to your Ember project in 3 easy steps.</p>
+  <p>Easily add typefaces to your Ember project in 2 easy steps.</p>
 </div>
 
 <br>
@@ -27,21 +27,28 @@ ember install ember-typeface
 Usage
 -----
 
-1. Pick a typeface from the list of over [800 available](https://github.com/jeffjewiss/ember-typeface/blob/master/lib/typefaces.js)
-2. Install the corresponding typeface package, ie. `npm install typeface-lato --save-dev`
-3. Configure the typeface with your application:
+1. Install Ember Typeface: `ember install ember-typeface`
+2. Pick a typeface from the list of over [800 available](https://github.com/jeffjewiss/ember-typeface/blob/master/lib/typefaces.js) and add it to your project: `npm install typeface-lato --save-dev`
+
+That’s it!
+
+You are now free to use `font-family: "Lato"` in your application’s styles.
+
+Advanced Usage
+--------------
+
+Ember Typeface will try to look through your `node_modules` to discover typeface packages. If typefaces are specified in the `options.typefaces` property the two lists will be merged for unique values. However, you can choose to disable this auto discovery and configure which typefaces are imported into your project.
 
 ```javascript
   let app = new EmberApp(defaults, {
     typefaceOptions: {
+      disableAuto: true, // default is false, disable to manually choose typefaces
       typefaces: [
         'lato'
       ]
     }
   });
 ```
-
-You are now free to use `font-family: “Lato”` in your application’s styles.
 
 Commands
 --------
