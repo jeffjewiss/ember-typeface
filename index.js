@@ -28,12 +28,12 @@ module.exports = {
     let addonOptions = this._getAddonOptions(app).typefaceOptions || {}
     let typefaces = addonOptions.disableAuto ? [] : this._getTypefacesFromPackage()
 
-    this.options = merge.all([{}, {
+    this._options = merge.all([{}, {
       typefaces
     }, addonOptions])
 
 
-    if (!this.options.typefaces.length) {
+    if (!this._options.typefaces.length) {
       return;
     }
 
@@ -78,7 +78,7 @@ module.exports = {
   },
 
   _checkTypefaces () {
-    this.options.typefaces.forEach((typeface) => {
+    this._options.typefaces.forEach((typeface) => {
       if (!typefaceList.includes(typeface)) {
         throw new Error(`The font '${typeface}' is not supported. Please chose a font from the available list.`)
       }
@@ -94,7 +94,7 @@ module.exports = {
   },
 
   _createImports () {
-    this.options.typefaces.filter(onlyUnique).forEach((typeface) => {
+    this._options.typefaces.filter(onlyUnique).forEach((typeface) => {
       this.import(`node_modules/typeface-${typeface}/index.css`, {
         destDir: 'assets/files'
       });
