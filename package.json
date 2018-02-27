@@ -27,7 +27,7 @@
   "dependencies": {
     "deepmerge": "2.0.1",
     "detect-installed": "2.0.4",
-    "ember-cli-babel": "6.11.0",
+    "ember-cli-babel": "6.12.0",
     "ember-cli-version-checker": "2.1.0",
     "fuzzysearch": "1.0.3",
     "globby": "8.0.1",
