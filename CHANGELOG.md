@@ -1,5 +1,10 @@
 # master
 
+# 0.3.1
+
+* upgrade to Ember 3.0
+* update dependencies
+
 # 0.3.0
 
 * move configuration from ember-cli-build.js to config/environment.js
