@@ -9,7 +9,7 @@ const humanizeString = require('humanize-string')
 const detectInstalled = require('detect-installed')
 const VersionChecker = require('ember-cli-version-checker')
 const typefaceList = require('./lib/typefaces')
-const emberENV = process.env.EMBER_ENV
+const defaultOptions = { typefaces: [] }
 
 module.exports = {
   name: 'ember-typeface',
@@ -25,8 +25,8 @@ module.exports = {
       .assertAbove('2.16.0', assertMessage);
   },
 
-  included (/* app */) {
-    let typefaceOptions = require(`${this.project.root}/config/environment`)(emberENV).typefaceOptions || {}
+  included (app) {
+    let typefaceOptions = require(`${this.project.root}/config/environment`)(app.env).typefaceOptions || defaultOptions
     let typefaces = typefaceOptions.disableAuto ? [] : getTypefacesFromPackage()
 
     this._options = merge.all([{}, {
@@ -43,7 +43,8 @@ module.exports = {
   },
 
   includedCommands () {
-    let typefaceOptions = require(`${this.project.root}/config/environment`)(process.env.EMBER_ENV).typefaceOptions || {}
+    let emberEnv = process.env.EMBER_ENV || 'development'
+    let typefaceOptions = require(`${this.project.root}/config/environment`)(emberEnv).typefaceOptions || defaultOptions
 
     return {
       'typeface:active': {
@@ -141,6 +142,6 @@ function onlyUnique(value, index, self) {
 
 function getTypefacesFromPackage () {
   return globby
-    .sync('node_modules/typeface-*/', { nodir: false })
-    .map((fullPath) => fullPath.replace('node_modules/', '').replace('/', '').replace('typeface-', '')
+    .sync('typeface-*', { cwd: 'node_modules', onlyDirectories: true })
+    .map((fullPath) => fullPath.replace('typeface-', '')
   )}
