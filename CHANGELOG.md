@@ -1,5 +1,9 @@
 # master
 
+# 0.3.2
+
+* fix broken typeface detection based on environment
+
 # 0.3.1
 
 * upgrade to Ember 3.0
