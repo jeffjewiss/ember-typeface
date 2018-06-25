@@ -21,7 +21,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "lint": "eslint app addon blueprints config server test-support tests *.js",
+    "lint": "eslint ./*.js config lib tests",
+    "lint:fix": "npm run lint -- --fix",
     "test": "npm run lint && ember try:each"
   },
   "dependencies": {
@@ -55,7 +56,7 @@
     "ember-source-channel-url": "^1.0.1",
     "ember-try": "^0.2.23",
     "eslint": "^5.0.0",
-    "eslint-plugin-ember": "^5.0.3",
+    "eslint-plugin-ember": "^5.2.0",
     "eslint-plugin-node": "^6.0.0",
     "loader.js": "^4.2.3"
   },
