@@ -3,8 +3,8 @@
 # Test against these versions of Node.js.
 environment:
   matrix:
+    - nodejs_version: "6"
     - nodejs_version: "8"
-    - nodejs_version: "9"
     - nodejs_version: "10"
 
 cache:
@@ -13,7 +13,7 @@ cache:
 # Install scripts. (runs after repo cloning)
 install:
   - ps: Install-Product node $env:nodejs_version
-  - appveyor-retry npm i -g npm@^5
+  - appveyor-retry npm i -g npm@^6
   - appveyor-retry yarn
 
 # Post-install test scripts.
