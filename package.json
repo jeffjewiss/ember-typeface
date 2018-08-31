@@ -53,7 +53,7 @@
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.3.1",
     "ember-source-channel-url": "^1.0.1",
-    "ember-try": "^0.2.23",
+    "ember-try": "^1.0.0",
     "eslint": "^4.17.0",
     "eslint-plugin-ember": "^5.0.3",
     "eslint-plugin-node": "^6.0.0",
