@@ -1,5 +1,11 @@
 # master
 
+# 0.4.0
+
+* use version ranges for dependencies
+* support testing Node 6+
+* update dependencies and remove cruft
+
 # 0.3.2
 
 * fix broken typeface detection based on environment
