@@ -111,7 +111,7 @@ module.exports = {
       }
 
       if (!detectInstalled.sync(`typeface-${typeface}`, { local: true })) {
-        throw new Error(`The font package 'typeface-${typeface}' is not installed. Please add it to your project with NPM or Yarn.`)
+        throw new Error(`The font package 'typeface-${typeface}' is not installed. Please add it to your project with NPM.`)
       }
     })
   },
