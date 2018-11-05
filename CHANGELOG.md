@@ -1,5 +1,9 @@
 # master
 
+# 0.4.1
+
+* update dependencies to fix "merge" security vulnerability
+
 # 0.4.0
 
 * use version ranges for dependencies
