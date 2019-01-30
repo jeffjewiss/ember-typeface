@@ -1,21 +1,23 @@
 {
   "name": "ember-typeface",
   "version": "0.4.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Easily add typefaces (fonts) to your Ember projects.",
   "keywords": [
     "ember-addon",
     "font",
-    "typeface"
+    "font-face",
+    "typeface",
+    "typography",
+    "webfont",
   ],
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/jeffjewiss/ember-typeface",
   "bugs": {
     "url": "https://github.com/jeffjewiss/ember-typeface/issues"
   },
   "homepage": "https://github.com/jeffjewiss/ember-typeface",
   "author": "Jeff Jewiss <jeffjewiss@gmail.com>",
   "directories": {
-    "doc": "doc",
     "test": "tests"
   },
   "scripts": {
