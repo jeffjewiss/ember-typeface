@@ -1,5 +1,10 @@
 # master
 
+# 1.0.0
+
+* adds visual diff test for a sanity check
+* updates dependencies
+
 # 0.4.1
 
 * update dependencies to fix "merge" security vulnerability
