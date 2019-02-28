@@ -71,6 +71,10 @@
     "index.js"
   ],
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "before": [
+      "ember-cli-sri",
+      "broccoli-asset-rev"
+    ]
   }
 }
