@@ -34,7 +34,7 @@
     "fuzzysearch": "^1.0.3",
     "globby": "^9.0.0",
     "humanize-string": "^2.0.0",
-    "titleize": "^1.0.1"
+    "titleize": "^2.0.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^3.0.0",
