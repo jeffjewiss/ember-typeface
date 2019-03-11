@@ -33,7 +33,7 @@
     "ember-cli-version-checker": "^3.0.0",
     "fuzzysearch": "^1.0.3",
     "globby": "^9.0.0",
-    "humanize-string": "^1.0.2",
+    "humanize-string": "^2.0.0",
     "titleize": "^1.0.1"
   },
   "devDependencies": {
