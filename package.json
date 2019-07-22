@@ -61,7 +61,7 @@
     "eslint-plugin-ember": "^6.0.0",
     "eslint-plugin-node": "^9.0.1",
     "loader.js": "^4.2.3",
-    "typeface-lato": "^0.0.54"
+    "typeface-lato": "^0.0.75"
   },
   "engines": {
     "node": ">= 6.9"
