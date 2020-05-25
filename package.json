@@ -1,6 +1,6 @@
 {
   "name": "ember-typeface",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easily add typefaces (fonts) to your Ember projects.",
   "keywords": [
     "ember-addon",
