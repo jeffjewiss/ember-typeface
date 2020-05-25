@@ -1,5 +1,9 @@
 # master
 
+# 1.0.1
+
+* adds Inter typeface (@josemarluedke)
+
 # 1.0.0
 
 * adds visual diff test for a sanity check
