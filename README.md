@@ -24,6 +24,8 @@ Installation
 ember install ember-typeface
 ```
 
+For a project that imports [fontsource](https://github.com/fontsource/fontsource) packages instead, see [ember-fontsource](https://github.com/mwhitworth/ember-fontsource).
+
 Usage
 -----
 
