@@ -16,6 +16,36 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+
+<hr>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+Notice
+------
+
+The `typefaces` project has been deprecated and it is recommended that you use [fontsource](https://github.com/fontsource/fontsource) instead. Please switch to using [ember-fontsource](https://github.com/mwhitworth/ember-fontsource) to use fontsource in an Ember project.
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<hr>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 Installation
 ------------
@@ -23,8 +53,6 @@ Installation
 ```shell
 ember install ember-typeface
 ```
-
-For a project that imports [fontsource](https://github.com/fontsource/fontsource) packages instead, see [ember-fontsource](https://github.com/mwhitworth/ember-fontsource).
 
 Usage
 -----
